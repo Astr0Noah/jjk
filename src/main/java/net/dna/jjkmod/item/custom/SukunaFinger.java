@@ -1,11 +1,14 @@
 package net.dna.jjkmod.item.custom;
 
+import net.dna.jjkmod.networking.ModMessages;
+import net.dna.jjkmod.networking.packet.SukunaC2SPacket;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -21,16 +24,10 @@ public class SukunaFinger extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        if(level.isClientSide() && hand == InteractionHand.MAIN_HAND){
-            //outputRandomNumber(player);
+    public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity livingEntity) {
+        ModMessages.sendToServer(new SukunaC2SPacket());
 
-
-        }
-
-
-
-        return super.use(level, player, hand);
+        return super.finishUsingItem(itemStack, level, livingEntity);
     }
 
     @Override
@@ -47,11 +44,5 @@ public class SukunaFinger extends Item {
 
     }
 
-    private void outputRandomNumber(Player player){
-        player.sendSystemMessage(Component.literal("Your Number is "+ getRandom()));
-    }
 
-    private int getRandom(){
-        return RandomSource.createNewThreadLocalInstance().nextInt(10);
-    }
 }

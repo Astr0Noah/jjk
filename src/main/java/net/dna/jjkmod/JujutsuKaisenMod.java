@@ -2,6 +2,7 @@ package net.dna.jjkmod;
 
 import com.mojang.logging.LogUtils;
 import net.dna.jjkmod.item.ModItems;
+import net.dna.jjkmod.networking.ModMessages;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -45,7 +46,9 @@ public class JujutsuKaisenMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(() -> {
+            ModMessages.register();
+        });
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event){
