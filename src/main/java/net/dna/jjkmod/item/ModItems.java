@@ -15,8 +15,5 @@ public class ModItems {
 
     public static final RegistryObject<Item>SUKUNA_FINGER = ITEMS.register("sukuna_finger",
             ()-> new SukunaFinger(new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().alwaysEat().nutrition(0).build())));
-
-
-
     public static void register(IEventBus eventBus){ITEMS.register(eventBus);}
 }
