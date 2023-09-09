@@ -17,6 +17,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.IModBusEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
@@ -48,6 +49,8 @@ public class JujutsuKaisenMod
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
+
+
     }
 
 
@@ -77,10 +80,20 @@ public class JujutsuKaisenMod
         {
 
         }
+
     }
-    @SubscribeEvent
-    public static void registerTemplates(ServerAboutToStartEvent e)throws IOException{
-        JujutsuKaisenMod.LOGGER.debug("This should be called");
-        LoadQuest.registerQuest(e.getServer(), JujutsuKaisenMod.MOD_ID);
+
+    @Mod.EventBusSubscriber(modid = JujutsuKaisenMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public class registerTest{
+        @SubscribeEvent
+        public static void registerTemplates(ServerAboutToStartEvent e)throws IOException{
+            JujutsuKaisenMod.LOGGER.debug("This should be called");
+            LoadQuest.registerQuest(e.getServer(), JujutsuKaisenMod.MOD_ID);
+
+        }
+
     }
+
+
+
 }
