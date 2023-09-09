@@ -1,0 +1,28 @@
+{
+  "id": "testquest",
+  "title": "quest_name.jjkmod.testquest",
+  "hasTimeLimit": false,
+  "timeLimitInSeconds": "",
+  "goals": [
+    {
+      "type": "COLLECT",
+      "target": "minecraft:iron_ingot",
+      "amount": "1"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "ITEM",
+      "tag": "minecraft:coal",
+      "amount": "1"
+    }
+  ],
+  "requirements": [
+    {
+      "type": "NONE",
+      "requirements_min": "",
+      "requirements_max": ""
+    }
+  ],
+  "description": "This is a test quest"
+}
