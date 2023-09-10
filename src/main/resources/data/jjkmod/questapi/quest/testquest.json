@@ -1,8 +1,8 @@
 {
   "id": "testquest",
-  "title": "quest_name.jjkmod.testquest",
+  "title": "First Quest",
   "hasTimeLimit": false,
-  "timeLimitInSeconds": "",
+  "timeLimitInSeconds": 0,
   "goals": [
     {
       "type": "COLLECT",
@@ -19,9 +19,9 @@
   ],
   "requirements": [
     {
-      "type": "NONE",
-      "requirements_min": "",
-      "requirements_max": ""
+      "type": "XP",
+      "requirements_min": "0",
+      "requirements_max": "100000"
     }
   ],
   "description": "This is a test quest"

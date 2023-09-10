@@ -1,4 +1,6 @@
 {
-  "item.jjkmod.sukuna_finger": "Sukuna Finger"
+  "item.jjkmod.sukuna_finger": "Sukuna Finger",
+  "quest_name.jjkmod.testquest": "Test Quest",
+  "quest_type.jjkmod.collect": "Collection"
 
 }
