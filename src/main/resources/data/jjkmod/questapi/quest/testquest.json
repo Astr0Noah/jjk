@@ -13,7 +13,7 @@
   "rewards": [
     {
       "type": "ITEM",
-      "tag": "minecraft:coal",
+      "tag": "minecraft:diamond",
       "amount": "1"
     }
   ],
